@@ -1,0 +1,25 @@
+.body {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    display: block;
+}
+
+.jumbotron {
+    text-align: center;
+}
+
+/* .form-control {
+    display: inline-block;
+    width: 250px;
+  } */
+  
+#search {
+    display: inline-block;
+    margin: 23px 23px;
+}
+
+#th-comment {
+    word-break: break-word;
+}
