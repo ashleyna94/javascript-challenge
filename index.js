@@ -44,7 +44,37 @@ function handleSearchButtonClick() {
   var filterCountry = $countryInput.value.trim().toLowerCase();
   var filterShape = $shapeInput.value.trim().toLowerCase();
 
-  // Set filterDateTime to an array of the ufoDateTime whose "date/time" matches the filter
+  if (filterDateTime.length > 0) {
+    ufoSightingsData = ufoSightingsData.filter(function(ufoSightings){
+      return ufoSightingsData === filterDateTime
+    })
+  }
+
+  if (filterCity.length > 0) {
+    ufoSightingsData = ufoSightingsData.filter(function(ufoSightings){
+      return ufoSightingsData === filterCity
+    })
+  }
+
+  if (filterState.length > 0) {
+    ufoSightingsData = ufoSightingsData.filter(function(ufoSightings){
+      return ufoSightingsData === filterState
+    })
+  }
+
+  if (filterCountry.length > 0) {
+    ufoSightingsData = ufoSightingsData.filter(function(ufoSightings){
+      return ufoSightingsData === filterCountry
+    })
+  }
+
+  if (filterShape.length > 0) {
+    ufoSightingsData = ufoSightingsData.filter(function(ufoSightings){
+      return ufoSightingsData === filterShape
+    })
+  }
+  
+  // Set filters to each arrays whose input matches the filter
   ufoSightingsData = dataSet.filter(function(ufoSightings) {
     var ufoDateTime = ufoSightings.datetime;
     var ufoCity = ufoSightings.city;
@@ -53,10 +83,10 @@ function handleSearchButtonClick() {
     var ufoShape = ufoSightings.shape;
 
     // If true, add the date/time to the filteredDateTime, otherwise don't add to it 
-    return ufoDateTime == filterDateTime || 
+    return ufoDateTime == filterDateTime ||
     ufoCity == filterCity || 
     ufoState == filterState || 
-    ufoCountry == filterCountry || 
+    ufoCountry == filterCountry ||
     ufoShape == filterShape;
   });
 
